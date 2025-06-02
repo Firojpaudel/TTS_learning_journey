@@ -23,7 +23,7 @@ tts --text "The text to be synthesized" \
 
 Output: [Click here](./outputs/first_day_output.wav) to listen.
 
-> [!Note]:
+> [!Note]
 > In docs they talk about **vocoder**. 
 > Well vocoder is a signal processing module that converts intermediate audio representations *(spectrograms)* into raw audio waveforms.
 >
