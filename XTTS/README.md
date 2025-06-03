@@ -54,7 +54,7 @@ Okay so today; first I synthesized a voice then well my goal is to learn voice c
 > I used `tts_models/en/ljspeech/tacotron2-DDC` at first but well some models dont support voice cloning. So I shifted to `tts_models/multilingual/multi-dataset/xtts_v2`
 
 > [!Important]
-> DO NOT FORGET to add the model as safe during serialization *(used in code)*. 
+> DO NOT FORGET to add the model as safe during serialization *(used in [code](TTS_voice_cloning.py))*. 
 
 > [!tip]
 > Take the model original audio clip between 10-20 seconds max.
