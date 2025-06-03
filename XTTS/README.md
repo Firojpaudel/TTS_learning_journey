@@ -58,3 +58,7 @@ Okay so today; first I synthesized a voice then well my goal is to learn voice c
 
 > [!tip]
 > Take the model original audio clip between 10-20 seconds max.
+
+> [!Note]
+> Also we can convert the speech of speaker1 and modify it to sound like speaker2
+> Check out the code [here](./Speech_speaker_convert_day_2.py)
