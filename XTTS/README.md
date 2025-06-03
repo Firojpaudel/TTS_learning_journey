@@ -45,4 +45,16 @@ tts --text "Text for TTS."\
 ---
 #### Day 02: **Using TTS API in a code**:
 
-[Click Here](./TTS_api_using_day_02.py) to redirect to the code.
+Okay so today; first I synthesized a voice then well my goal is to learn voice cloning by the EOD. 
+
+- First Speech Synthesis code: [Click Here](./TTS_api_using_day_02.py) to redirect.
+- Moving towards cloning: 
+
+> [!Note]
+> I used `tts_models/en/ljspeech/tacotron2-DDC` at first but well some models dont support voice cloning. So I shifted to `tts_models/multilingual/multi-dataset/xtts_v2`
+
+> [!Important]
+> DO NOT FORGET to add the model as safe during serialization *(used in code)*. 
+
+> [!tip]
+> Take the model original audio clip between 10-20 seconds max.
