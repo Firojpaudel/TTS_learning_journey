@@ -1,0 +1,28 @@
+{
+  "model": "vits",
+  "run_name": "multilingual_tts_9lang",
+  "audio": {
+    "sample_rate": 22050,
+    "audio_channels": 1
+  },
+  "data": {
+    "dataset_path": "/content/drive/MyDrive/multilingual_dataset",
+    "metadata_file": "metadata.csv",
+    "languages": ["de", "en", "es", "ja", "pt", "tr", "zh-cn", "ne", "in"],
+    "use_phonemes": true,
+    "phoneme_type": "espeak",
+    "phoneme_cache_path": "/content/phoneme_cache"
+  },
+  "model_args": {
+    "num_languages": 9,
+    "speaker_embedding": false,
+    "hidden_channels": 128,
+    "num_layers": 4
+  },
+  "training": {
+    "batch_size": 2,
+    "num_epochs": 200,
+    "learning_rate": 0.00005
+  },
+  "output_path": "/content/drive/MyDrive/runs"
+}
