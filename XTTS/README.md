@@ -1,0 +1,71 @@
+## XTTS: By [Coqui.ai](https://docs.coqui.ai/en/latest/models/xtts.html) 🐸:
+
+#### 🎯 Targets:
+
+| Task                  | Status   |
+|-----------------------|:--------:|
+| Normal Speech Synthesis | ✅ |
+| Learn Voice Cloning     | ✅ |
+| Multi Speaker training  | ✅ |
+| Implementing a TTS model | 🏊‍♂️ | 
+| Finetuning the TTS Model| ⏳ |
+
+---
+#### Day 01: **Synthesizing Speech**:
+
+- xtss has its own local demo server. Just run `tts-server` in the powershell after installing TTS.
+- It also has some inbuilt models. Get the list of them using `tts --list_models`
+- Also, if we dont want to go through the local server we can just create synthesize the speech using:
+```pwsh
+tts --text "The text to be synthesized" \
+    --model_name "tts_models/en/multi-dataset/tortoise-v2" \
+    --out_path XTTS/outputs/first_day_output.wav
+```
+
+Output: [Click here](./outputs/first_day_output.wav) to listen.
+
+> [!Note]
+> In docs they talk about **vocoder**. 
+> Well vocoder is a signal processing module that converts intermediate audio representations *(spectrograms)* into raw audio waveforms.
+>
+> And to use that, simply add another line inside the above script as:
+> `--vocoder_name "vocoder_models/en/ljspeech/hifigan_v2"`
+
+- Also we can run multi-speaker TTS model using:
+```pwsh 
+tts --text "Text for TTS."\
+    --out_path XTTS/outputs/first_multispeaker_output.wav \
+    --model_name "tts_models/multilingual/multi-dataset/xtts_v2"  
+    --speaker_idx "<speaker_id>"
+```
+
+> [!Important]
+> But before that please run: \
+> `tts --model_name "tts_models/<language>/<dataset>/<model_name>"  --list_speaker_idxs` 
+
+---
+#### Day 02: **Using TTS API in a code**:
+
+Okay so today; first I synthesized a voice then well my goal is to learn voice cloning by the EOD. 
+
+- First Speech Synthesis code: [Click Here](./TTS_api_using_day_02.py) to redirect.
+- Moving towards cloning: 
+
+> [!Note]
+> I used `tts_models/en/ljspeech/tacotron2-DDC` at first but well some models dont support voice cloning. So I shifted to `tts_models/multilingual/multi-dataset/xtts_v2`
+
+> [!Important]
+> DO NOT FORGET to add the model as safe during serialization *(used in [code](TTS_voice_cloning.py))*. 
+
+> [!tip]
+> Take the model original audio clip between 10-20 seconds max.
+
+- We can also convert the speech of speaker1 and modify it to sound like speaker2
+> Check out the code [here](./Speech_speaker_convert_day_2.py)
+
+---
+#### Day 03: Creating own TTS Model:
+
+Okay so I'm choosing a simple dataset this time. A single speaker dataset to be precise. I'm using [LJSpeech dataset](https://keithito.com/LJ-Speech-Dataset/)
+
+[Click Here](./my_tts_model.py) to redirect to the code
